@@ -1,5 +1,6 @@
 import json
 import uuid
+import asyncio
 
 from authx.schema import TokenPayload
 from fastapi import Depends
@@ -24,6 +25,8 @@ async def get_all_post(user_id: uuid.UUID, session: SessionDependency):
     exists_flag = await session.scalar(stmt)
     if exists_flag is False:
         raise HTTPException(status_code=HTTP_404_NOT_FOUND, detail="User not found")
+
+    await asyncio.sleep(2)  # симуляция нагрузки
 
     result = await session.execute(select(Post).where(Post.user_id == user_id))
     posts = result.scalars().all()
