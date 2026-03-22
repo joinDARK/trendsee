@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/inter.ttf");
+    font-display: swap;
+    font-weight: 100 900;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    letter-spacing: 0.4px;
+    font-family: "Inter";
+    scroll-behavior: smooth;
+}
+
+button {
+    border: none;
+    background-color: #f4f5f6;
+    cursor: pointer;
+}
+
+.button {
+    padding: 12px;
+}
+
+.icon {
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.blur {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+}
+
+.button_primary {
+    background-color: #2b31b3;
+    color: white;
+}
+
+.videocard {
+    width: 254px;
+}
+
+.videocard__top {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.video-header__badage {
+    display: flex;
+    border-radius: 8px;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+    width: fit-content;
+    color: white;
+}
+
+.video-header__left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.video-header__badage-value {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+}
+
+.videocard__video-header {
+    position: absolute;
+    padding: 12px;
+    width: 100%;
+}
+
+.videocard__video {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+
+.videocard__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 4px;
+}
+
+.videocard__bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.videocard__user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.videocard__user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.videocard__user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.videocard__subscribe {
+    padding: 0;
+    background-color: transparent;
+}
+
+.videocard__user-name {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+    color: #2b31b3;
+}
+
+.videocard__user-subscribes {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #4e616b;
+}
+
+.videocard__bottom-text {
+    height: 44px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    color: #4e616b;
+}
+
+.videocard__date {
+    color: #a0adb4;
+    line-height: 14.5px;
+    font-size: 12px;
+    font-weight: 500;
+}
