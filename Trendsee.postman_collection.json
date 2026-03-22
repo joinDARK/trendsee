@@ -1,0 +1,192 @@
+{
+  "info": {
+    "_postman_id": "6da82907-2564-4255-ba8b-bf55121b7d48",
+    "name": "Trendsee",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49189163",
+    "_collection_link": "https://go.postman.co/collection/49189163-6da82907-2564-4255-ba8b-bf55121b7d48?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Создать пост",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Тестовый пост\",\n  \"text\": \"Описание этого тестового поста\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}/p/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}", "p", ""]
+        },
+        "description": "Нужно будет заменить {user_id} в маршруте. Возвращает данные нового поста. Также в Bearer надо вставить токен. Сохраняет в Redis на 10 минут."
+      },
+      "response": []
+    },
+    {
+      "name": "Получить JWT токен",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}"]
+        },
+        "description": "Возвращает новый JWT-токен."
+      },
+      "response": []
+    },
+    {
+      "name": "Получить пост пользователя",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}p/{post_id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}p", "{post_id}"]
+        },
+        "description": "Нужно будет заменить {user_id} и {post_id} в маршруте. Возвращает данные поста из Redis, если пост был создан 10 минут назад."
+      },
+      "response": []
+    },
+    {
+      "name": "Обновить имя пользователя",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Updated Username\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}"]
+        },
+        "description": "Нужно будет заменить {user_id} в маршруте"
+      },
+      "response": []
+    },
+    {
+      "name": "Удалить пользователя",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}"]
+        },
+        "description": "Нужно будет заменить {user_id} в маршруте. Возвращает ответ."
+      },
+      "response": []
+    },
+    {
+      "name": "Создание пользователя",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/u/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", ""]
+        },
+        "description": "При успешном запросе в ответе будет id - пользователя и JWT токен."
+      },
+      "response": []
+    },
+    {
+      "name": "Получить все посты пользователя",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}/p",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}", "p"]
+        },
+        "description": "Нужно будет заменить {user_id} в маршруте."
+      },
+      "response": []
+    },
+    {
+      "name": "Обновить пост",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Обновленный пост\",\n  \"text\": \"Описание этого тестового поста было изменено, так как его обновили\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}p/{post_id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}p", "{post_id}"]
+        },
+        "description": "Нужно будет заменить {user_id} и {post_id} в маршруте. Возвращает данные обновленного поста. Также обновляет данные в Redis."
+      },
+      "response": []
+    },
+    {
+      "name": "Удалить пост",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/u/{user_id}p/{post_id}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["u", "{user_id}p", "{post_id}"]
+        },
+        "description": "Нужно будет заменить {user_id} и {post_id} в маршруте. Возвращает `{ \"success\": true }`. Удаляет пост из кэша."
+      },
+      "response": []
+    }
+  ]
+}
