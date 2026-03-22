@@ -21,7 +21,7 @@ async def create(session: SessionDependency, user: UserSchema):
     await session.commit()
 
     token = auth.create_access_token(uid=str(new_user.id))
-    return {"success": True, "access_token": token}
+    return {"user_id": new_user.id, "access_token": token}
 
 
 @user_router.put("/{user_id}")
