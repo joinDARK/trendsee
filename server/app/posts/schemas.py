@@ -1,3 +1,4 @@
+import uuid
 from datetime import datetime
 
 from pydantic.fields import Field
@@ -10,4 +11,5 @@ class PostSchema(BaseModel):
 
 
 class CachedPostSchema(PostSchema):
+    user_id: uuid.UUID
     created_at: datetime

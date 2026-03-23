@@ -162,7 +162,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8000/u/{user_id}p/{post_id}",
+          "raw": "http://localhost:8000/u/{user_id}/p/{post_id}",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8000",
@@ -178,7 +178,7 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:8000/u/{user_id}p/{post_id}",
+          "raw": "http://localhost:8000/u/{user_id}/p/{post_id}",
           "protocol": "http",
           "host": ["localhost"],
           "port": "8000",

@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     DB_NAME: str = "trendsee"
     JWT_ACCESS_SECRET: str = "sec"
     POST_CACHE_TTL: int = 600
+    REDIS_HOST: str = "localhost"
 
     @property
     def database_url_asyncpg(self):

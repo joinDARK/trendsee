@@ -1,6 +1,6 @@
+import asyncio
 import json
 import uuid
-import asyncio
 
 from authx.schema import TokenPayload
 from fastapi import Depends
@@ -87,7 +87,10 @@ async def create(
         post_key,
         SETTINGS.POST_CACHE_TTL,
         CachedPostSchema(
-            title=new_post.title, text=new_post.text, created_at=new_post.created_at
+            user_id=new_post.user_id,
+            title=new_post.title,
+            text=new_post.text,
+            created_at=new_post.created_at,
         ).model_dump_json(),
     )
 
@@ -121,13 +124,12 @@ async def update(
     if await redis.exists(post_key):
         await redis.set(
             post_key,
-            json.dumps(
-                CachedPostSchema(
-                    title=existing_post.title,
-                    text=existing_post.text,
-                    created_at=existing_post.created_at,
-                ).model_dump_json()
-            ),
+            CachedPostSchema(
+                user_id=existing_post.user_id,
+                title=existing_post.title,
+                text=existing_post.text,
+                created_at=existing_post.created_at,
+            ).model_dump_json(),
             keepttl=True,
         )
 
