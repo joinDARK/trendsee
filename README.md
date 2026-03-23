@@ -21,6 +21,7 @@
 ## Инструкция запуска клиента
 1. `cd frontend/`
 2. `npm i` или `bun i`
-3. `npm run dev` или `bun run dev`
+3. Поменять в `src/App.vue` переменную `USER_ID` на созданного пользователя
+4. `npm run dev` или `bun run dev`
 
 _P.S. Нужно запустить сервер через `docker compose up --build`._

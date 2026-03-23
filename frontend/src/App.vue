@@ -4,7 +4,7 @@ import { onMounted, onUnmounted, ref } from "vue";
 import { getPosts, type PostData } from "./features/api/posts";
 import Modal from "./shared/ui/Modal.vue";
 
-const USER_ID = "d8b60c9c-3490-40b7-ab65-b25a7d768e60";
+const USER_ID = "d8b60c9c-3490-40b7-ab65-b25a7d768e60"; // TODO: поменять на сущетсвующий id пользователя
 const SCROLL_THRESHOLD = 500;
 
 const posts = ref<PostData[]>([]);
